@@ -18,6 +18,7 @@ class Calculator extends Component {
     }
 
     addToExpression(event) {
+        console.log(event.key)
         console.log(event.target.value)
         const newExpression = this.state.expression + event.target.value;
         console.log('newExpression', newExpression)
@@ -25,7 +26,7 @@ class Calculator extends Component {
     }
     render() {
         return (
-            <div className="calculator">
+            <div onKeyDown={this.addToExpression} className="calculator">
                 <div className="screen">{this.state.screen}</div>
                 <div className="numbers">
                     <button onClick={this.addToExpression} value='7'>7</button>
@@ -44,7 +45,7 @@ class Calculator extends Component {
                     <button onClick={this.addToExpression} value='/'>/</button>
                     <button onClick={this.addToExpression} value='*'>*</button>
                     <button onClick={this.addToExpression} value=''>%</button>
-                    <button onClick={this.addToExpression} value=''>sq rt</button>
+                    <button onClick={this.addToExpression} value='&radic;'>&radic;</button>
                 </div>
                 <div className="commands">
                     <button>C</button>

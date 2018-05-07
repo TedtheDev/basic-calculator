@@ -31,8 +31,13 @@
 }
 
 .calculator .numbers button {
-    border: 1px solid black;
+    height: 50%;
+    margin: 0 3%;
+    border: .1rem solid black;
     cursor: pointer;
+    background: green;
+    color: white;
+    border-radius: .3rem;
 }
 
 .calculator .operators {
@@ -43,9 +48,28 @@
     align-items: center;
 }
 
+.calculator .operators button {
+    height: 15%;
+    border: .1rem solid black;
+    cursor: pointer;
+    background: green;
+    color: white;
+    border-radius: .3rem;
+}
+
 .calculator .commands {
     grid-area: commands;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.calculator .commands button {
+    width: 100%;
+    margin: 0 .1rem;
+    border: .1rem solid black;
+    cursor: pointer;
+    background: green;
+    color: white;
+    border-radius: .3rem;
 }
