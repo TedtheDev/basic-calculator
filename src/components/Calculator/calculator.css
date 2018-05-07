@@ -5,21 +5,47 @@
     grid-template-areas: 
         "screen screen"
         "numbers operators"
-        "commands commands"
+        "commands commands";
+    background: grey;
+    border-radius: 15px;
 }
 
 .calculator .screen {
     grid-area: screen;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background: rgb(208, 227, 230);
+    padding: 10%;
+    margin: 10%;
+    border-radius: 15px;
+    color: black;
 }
 
 .calculator .numbers {
     grid-area: numbers;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator .numbers button {
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 .calculator .operators {
     grid-area: operators;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .calculator .commands {
     grid-area: commands;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
