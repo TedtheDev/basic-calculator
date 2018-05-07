@@ -1,0 +1,25 @@
+.calculator {
+    grid-area: content;
+    display: grid;
+    grid-template: 1.2fr 6fr 1fr / 5fr 1fr;
+    grid-template-areas: 
+        "screen screen"
+        "numbers operators"
+        "commands commands"
+}
+
+.calculator .screen {
+    grid-area: screen;
+}
+
+.calculator .numbers {
+    grid-area: numbers;
+}
+
+.calculator .operators {
+    grid-area: operators;
+}
+
+.calculator .commands {
+    grid-area: commands;
+}
