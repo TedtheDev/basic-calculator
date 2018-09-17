@@ -89,6 +89,10 @@ const CalculatorCommands = styled.div`
 `;
 
 const removeLeadingZeros = num => {
+    if(!num) {
+        return num;
+    }
+
     let charArray = num.split('').slice(0);
     for(let i = 0; i < charArray.length; i++) {
         if(charArray[i] === '0') {
@@ -114,8 +118,13 @@ class Calculator extends Component {
             const cleanedExpression = removeLeadingZeros(this.state.expression)
             console.log('cleaned', cleanedExpression);
             // eslint-disable-next-line
-            const answer = eval(cleanedExpression);
-            this.setState({ screen: answer, expression: answer, lastNumber: answer, secondLastNumber: 0 });
+            let answer = eval(cleanedExpression);
+            let screen = answer;
+            if(!answer) {
+                answer = '';
+                screen = 0;
+            }
+            this.setState({ screen: screen, expression: answer, lastNumber: answer, secondLastNumber: 0 });
         }
         
     }
